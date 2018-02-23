@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.objectFactory" value="spring" />
+
+	<package name="crawler" namespace="/crawler" extends="struts-default,json-default">
+		<action name="GetWebSiteAction" class="com.crawler.action.GetWebSiteAction">
+		</action>
+		<action name="SerchAction" class="com.crawler.action.SerchAction">
+		</action>
+		<action name="DeleteSerchAction" class="com.crawler.action.DeleteSerchAction">
+		</action>
+		<action name="StopAllAction" class="com.crawler.action.StopAllAction">
+		</action>
+		<action name="FindCrawlerAction" class="com.crawler.action.FindCrawlerAction">
+			<result name="song">/ChangeSong.jsp</result>
+			<result name="book">/ChangeBook.jsp</result>
+			<result name="csdn">/ChangeCsdn.jsp</result>
+		</action>
+	</package>
+
+	<package name="song" namespace="/song" extends="struts-default,json-default">
+		<action name="GetSongAction" class="com.crawler.action.song.GetSongAction">
+		</action>
+		<action name="AddSongAction" class="com.crawler.action.song.AddSongAction">
+		</action>
+		<action name="FiveSingAction" class="com.crawler.action.song.FiveSingAction">
+		</action>
+		<action name="ProcessorAction" class="com.crawler.action.song.ProcessorAction">
+		</action>
+		<action name="DeleteSongAction" class="com.crawler.action.song.DeleteSongAction">
+		</action>
+		<action name="DeleteAllAction" class="com.crawler.action.song.DeleteAllAction">
+		</action>
+		<action name="ChangeSongAction" class="com.crawler.action.song.ChangeSongAction">
+		</action>
+		<action name="GetStyleAction" class="com.crawler.action.song.GetStyleAction">
+		</action>
+		<action name="GetTypeAction" class="com.crawler.action.song.GetTypeAction">
+		</action>
+		<action name="FindSongAction" class="com.crawler.action.song.FindSongAction">
+			<result name="success">/ChangeSong.jsp</result>
+		</action>
+	</package>
+
+	<package name="book" namespace="/book" extends="struts-default,json-default">
+		<action name="GetBookAction" class="com.crawler.action.book.GetBookAction">
+		</action>
+		<action name="AddBookAction" class="com.crawler.action.book.AddBookAction">
+		</action>
+		<action name="BookCrawlerAction" class="com.crawler.action.book.BookCrawlerAction">
+		</action>
+		<action name="DeleteBookAction" class="com.crawler.action.book.DeleteBookAction">
+		</action>
+		<action name="DeleteBookAllAction" class="com.crawler.action.book.DeleteBookAllAction">
+		</action>
+		<action name="ChangeBookAction" class="com.crawler.action.book.ChangeBookAction">
+		</action>
+		<action name="FindBookAction" class="com.crawler.action.book.FindBookAction">
+			<result name="success">/ChangeBook.jsp</result>
+		</action>
+	</package>
+
+	<package name="csdn" namespace="/csdn" extends="struts-default,json-default">
+		<action name="GetCsdnAction" class="com.crawler.action.csdn.GetCsdnAction">
+		</action>
+		<action name="AddCsdnAction" class="com.crawler.action.csdn.AddCsdnAction">
+		</action>
+		<action name="CsdnAction" class="com.crawler.action.csdn.CsdnAction">
+		</action>
+		<action name="DeleteCsdnAction" class="com.crawler.action.csdn.DeleteCsdnAction">
+		</action>
+		<action name="DeleteCsdnAllAction" class="com.crawler.action.csdn.DeleteCsdnAllAction">
+		</action>
+		<action name="ChangeCsdnAction" class="com.crawler.action.csdn.ChangeCsdnAction">
+		</action>
+		<action name="GetCsdnStyleAction" class="com.crawler.action.csdn.GetCsdnStyleAction">
+		</action>
+		<action name="FindCsdnAction" class="com.crawler.action.csdn.FindCsdnAction">
+			<result name="success">/ChangeCsdn.jsp</result>
+		</action>
+	</package>
+
+</struts>
